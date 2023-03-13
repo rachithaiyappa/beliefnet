@@ -22,7 +22,7 @@ if __name__ == "__main__":
     beta = 1 # weight of internal coherence
     N = 40 # number of nodes in the population
     n = 3 # number of nodes in each individuals' belief system
-    hub_kind = 'stable' # initial stability of the hub.
+    hub_kind = 'unstable' # initial stability of the hub.
 
     result_single_run = star_graph_dynamics(alpha=alpha,
                                             beta=beta,
