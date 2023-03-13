@@ -14,7 +14,7 @@ Here are the steps to get this working
 4. `cd src`
 5. `pip install -e .`
 
-These steps creates the environment and installs the belief network package which has some useful functions to do...stuff. Check out `srx/beliefet/model` to know more. 
+These steps creates the environment and installs the belief network package which has some useful functions to do...stuff. Check out `src/beliefet/model` to know more. 
 
 *Makefile coming up soon*
 
