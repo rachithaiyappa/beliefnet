@@ -423,7 +423,7 @@ def initialise_community_stabilities(
     - ini_cond -> 'stable' or 'unstable' indicating the stability of the two communities
     - fixed_inds -> node list of individuals whose beliefs need to be set to the opposite kind as that of communities
     - n -> number of concepts (equal across all individuals)
-    - sn -> star graph
+    - sn -> graph with communities
 
     Returns
     -------
@@ -480,9 +480,6 @@ def initialise_community_stabilities(
                 #belief networks of the others are set to be stable minus
                 bns[i] = list(complete_belief_network(n, [-1,-1,1]).edges(data=True))
     return bns
-
-#     return bns
-
 
 
 # def time_dynamics(sn,bns,alpha,beta,fixed_inds,normal_scale,T):
