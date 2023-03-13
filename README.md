@@ -8,11 +8,11 @@ This repository host the main part of the code which led to the results in our p
 ## Setting up
 Here are the steps to get this working
 
-1. git clone git@github.com:rachithaiyappa/beliefnet.git
-2. cd beliefnet 
-3. conda env create --name beliefnet --file=environment.yml
-4. cd src
-5. pip install -e .
+1. `git clone git@github.com:rachithaiyappa/beliefnet.git`
+2. `cd beliefnet`
+3. `conda env create --name beliefnet --file=environment.yml`
+4. `cd src`
+5. `pip install -e .`
 
 These steps creates the environment and installs the belief network package which has some useful functions to do...stuff. Check out `srx/beliefet/model` to know more. 
 
