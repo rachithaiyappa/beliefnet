@@ -17,6 +17,12 @@ The belief system of the seed individuals are fixed throughout the simulation.
 It returns a csv file with the fraction of individuals of different kinds at each time step of the simulation for a clustered or a random network.
 The main paper plots stable_plus_fraction vs time.
 
+Run the following from within the `scripts` directory
+julia --project=. wattsstrogatz.jl -a 2.0 -b 1.0 -s 0.2 -e 1
+
+* The description of each of the command line parameters in the above call can be found in /src/beliefnet/function.jl
+* --project=. runs the script from within the julia environment contained in Project.toml 
+
 Author: Rachith Aiyappa
 """
 
