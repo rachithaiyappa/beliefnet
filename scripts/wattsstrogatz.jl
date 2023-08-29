@@ -1,3 +1,26 @@
+"""
+This script performs the weighted belief network dynmaics on a watts strogatz graph (WS) and 
+tracks the time evolution of fraction of individuals in the population with a "stable_plus" ([+1,+1,+1]) belief system.
+
+The simulations are performed in two network settings, i.e. WS with 
+(1) rewiring probility = 1 (random network) and seed individuals picked in a random manner
+(2) rewiring probility = 0 (clustered network) and seed individuals picked such that they are neighbors, 
+    i.e present in the locally clustered region of the WS network
+This setting resembles the Centola 2010, online social contagion experiment. See our main paper for more details 
+
+While the seed set are always "stable_plus" individuals, the rest of the population are either
+(1)"unstable_plus"[-1,1,1]---the simple contagion setting, or
+(2)"stable_minus"[-1,-1,1]---the complex contagion setting
+
+The belief system of the seed individuals are fixed throughout the simulation.
+
+It returns a csv file with the fraction of individuals of different kinds at each time step of the simulation for a clustered or a random network.
+The main paper plots stable_plus_fraction vs time.
+
+Author: Rachith Aiyappa
+"""
+
+
 # This is main script which takes values of alpha, beta, and standard deviation 
 #and performs simulations based on these parameters by varying the modularity (mu) and seed nodes size of the social network.
 
@@ -27,10 +50,10 @@ parsed_args = parse_commandline()
 σ = parsed_args["normalscale"] #standard deviation of the normal
 ensembles = parsed_args["ensembles"] #number of ensembles
 
-# probability of rewiring (mu) and stability fixed nodes range, to be varied during the simulation
+# probability of rewiring (mu = 0 or 1) and stability fixed nodes range, to be varied during the simulation
 mus = LinRange(0,1,2)
-# stability_fixed_nodes_range = range(1,Int64(floor(N/2)),step=5)
-stability_fixed_nodes_range = range(7,10,step=1)
+stability_fixed_nodes_range = range(1,Int64(floor(N/2)),step=5)
+# stability_fixed_nodes_range = range(7,10,step=1)
 
 
 #--------------------------------------------------------------------------
