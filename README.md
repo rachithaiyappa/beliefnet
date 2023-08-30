@@ -5,6 +5,8 @@ A persistent repository where the scripts for the belief network project will be
 This repository hosts the main part of the code which led to the results in our paper [Weighted Belief Networks Unify Simple and Complex Contagion Dynamics](https://arxiv.org/pdf/2301.02368.pdf)
 Figure 2 of the main paper was obtained using a python script `scripts/stargraph.py`
 Figure 3, was obtained using a julia scirpt `scripts/wattsstrogatz.jl` since python was extremely slow for our simulations
+Figure 3, was obtained using a julia scirpt `scripts/optimalmodularity.jl` since python was extremely slow for our simulations
+
 
 ## Setting up
 ### Steps to get the **python scripts** of this repo working
