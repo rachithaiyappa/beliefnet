@@ -9,12 +9,13 @@ The simulations are performed in two network settings, i.e. WS with
 This setting resembles the Centola 2010, online social contagion experiment. See our main paper for more details 
 
 While the seed set are always "stable_plus" individuals, the rest of the population are either
-(1)"unstable_plus"[-1,1,1]---the simple contagion setting, or
-(2)"stable_minus"[-1,-1,1]---the complex contagion setting
+(1)"unstable_plus"[-1,1,1]---the simple contagion setting (set ini_string = "unstable"), or
+(2)"stable_minus"[-1,-1,1]---the complex contagion setting (set ini_string = "dual_stable")
 
 The belief system of the seed individuals are fixed throughout the simulation.
 
-It returns a csv file with the fraction of individuals of different kinds at each time step of the simulation for a clustered or a random network.
+It returns a csv file with the fraction of individuals of different kinds at each time step of the simulation for a clustered or a random network, 
+    for differennt values of mu and seed set sizes.
 The main paper plots stable_plus_fraction vs time.
 
 Run the following from within the `scripts` directory
@@ -125,7 +126,7 @@ for e in 1:ensembles
                     receiver = src(sampled_node_pair[1])
                 end
 
-                # if receiver belongs to the seed set, do nothing
+                # if receiver belongs to the seed set (zealots), do nothing
                 if receiver in fixed_inds
                     stable_fraction,unstable_fraction,neutral_fraction,unstable_minus_fraction,unstable_plus_fraction,stable_minus_fraction,stable_plus_fraction = final_fraction(bns)
                     data = Dict(
@@ -151,14 +152,14 @@ for e in 1:ensembles
                 sender_belief = get_belief(bns[sender],focal_edge)
                 receiver_belief = get_belief(bns[receiver],focal_edge)
 
+                # update belief of receiver
                 der = -1.0*∂E∂b(bns[receiver],focal_edge)
                 mean_of_normal = (α*sender_belief) + (β*der)
                 Δb =  rand(Normal(mean_of_normal, σ),1)
-                
-                # update belief of receiver
+        
                 new_belief = receiver_belief + Δb[1]
 
-                # bound  belief between [-1,1]
+                # bound belief between [-1,1]
                 if new_belief > 1
                     new_belief = 1
                 elseif  new_belief < -1
