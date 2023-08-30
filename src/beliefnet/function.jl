@@ -56,6 +56,31 @@ function create_triad_belief_net(edge_weights)
     return g
 end
 
+function social_network(N, mu, M)
+    """create a social network based on stochastic block model"""
+
+    # intra community links
+    intra = ceil(Int,(1-mu)*M)
+
+    #fraction of inter community links
+    inter = M - intra
+
+    #community 1 - half the nodes
+    comm1 = sample(1:N, ceil(Int,N/2), replace = false) #first and last element included, unlike python 
+    # community 2 - the remaining nodes
+    comm2 = collect(setdiff(Set(1:N), Set(comm1)))
+
+    # intra community edges
+    intra_edges = vcat([Edge(s,d) for (s,d) in combinations(comm1, 2)],[Edge(s,d) for (s,d) in combinations(comm2, 2)])
+    intra_edges = sample(intra_edges,intra,replace=false)
+    # inter community edges
+    inter_edges = vec([Edge(p) for p in product(comm1,comm2)])
+    inter_edges = sample(inter_edges,inter,replace = false)
+    G = SimpleGraph(vcat(intra_edges,inter_edges)) #node labels start from 1, unlike python
+
+    return G,comm1,comm2
+end
+
 function initialise_graph_stabilities(ini_cond :: String, fixed_inds:: Array,sn:: SimpleGraph)
     """the belief systems of each individual in the social network"""
 
