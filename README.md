@@ -2,10 +2,29 @@
 
 A persistent repository where the scripts for the belief network project will be stored and shared
 
-This repository hosts the main part of the code which led to the results in our paper [Weighted Belief Networks Unify Simple and Complex Contagion Dynamics](https://arxiv.org/pdf/2301.02368.pdf)
-Figure 2 of the main paper was obtained using a python script `scripts/stargraph.py`  
-Figure 4, was obtained using a julia scirpt `scripts/wattsstrogatz.jl` since python was extremely slow for our simulations  
-Figure 5, was obtained using a julia scirpt `scripts/optimalmodularity.jl` since python was extremely slow for our simulations  
+This repository hosts the main part of the code that led to the results in our paper [Emergence of simple and complex contagion dynamics from weighted belief networks](https://arxiv.org/pdf/2301.02368.pdf)  
+
+BibTex: 
+```
+@article{
+doi:10.1126/sciadv.adh4439,
+author = {Rachith Aiyappa  and Alessandro Flammini  and Yong-Yeol Ahn },
+title = {Emergence of simple and complex contagion dynamics from weighted belief networks},
+journal = {Science Advances},
+volume = {10},
+number = {15},
+pages = {eadh4439},
+year = {2024},
+doi = {10.1126/sciadv.adh4439},
+URL = {https://www.science.org/doi/abs/10.1126/sciadv.adh4439},
+eprint = {https://www.science.org/doi/pdf/10.1126/sciadv.adh4439},
+abstract = {Social contagion is a ubiquitous and fundamental process that drives individual and social changes. Although social contagion arises as a result of cognitive processes and biases, the integration of cognitive mechanisms with the theory of social contagion remains an open challenge. In particular, studies on social phenomena usually assume contagion dynamics to be either simple or complex, rather than allowing it to emerge from cognitive mechanisms, despite empirical evidence indicating that a social system can exhibit a spectrum of contagion dynamics—from simple to complex—simultaneously. Here, we propose a model of interacting beliefs, from which both simple and complex contagion dynamics can organically arise. Our model also elucidates how a fundamental mechanism of complex contagion—resistance—can come about from cognitive mechanisms. Different classes of social contagion dynamics emerge from a model grounded in fundamental cognitive processes and biases.}}
+```
+## Code to generate figures of the paper
+
+Figure 2 of the main paper was obtained using a Python script `scripts/stargraph.py`  
+Figure 4, was obtained using a Julia script `scripts/wattsstrogatz.jl` since Python was extremely slow for our simulations  
+Figure 5, was obtained using a Julia script `scripts/optimalmodularity.jl` since Python was extremely slow for our simulations  
 
 
 ## Setting up
@@ -17,7 +36,7 @@ Figure 5, was obtained using a julia scirpt `scripts/optimalmodularity.jl` since
 4. `cd src`
 5. `pip install -e .`
 
-These steps creates the environment and installs the belief network package which has some useful functions to do...stuff. Check out `src/beliefet/model` to know more. 
+These steps create the environment and install the belief network package which has some useful functions to do...stuff. Check out `src/beliefet/model` to know more. 
 
 *Makefile coming up soon*
 
@@ -26,9 +45,9 @@ Incase the environment.yml fails to build for you, the required packages in this
 2. numpy = 1.19.5
 3. networkx = 2.5
 
-However, I have tested the environment.yml on linux and OSx machines. It builds. 
-I'd avoid trying to setup your own environment from scratch. 
-Incase the enviroment does not build because, for some reason, conda cannot fetch some of the packages listed in environment.yml, I'd suggest deleting those pacakges from the environment.yml and trying to rerun step 3 above. 
+However, I have tested the environment.yml on Linux and OSx machines. It builds. 
+I'd avoid trying to set up your own environment from scratch. 
+Incase the environment does not build because, for some reason, conda cannot fetch some of the packages listed in environment.yml, I'd suggest deleting those packages from the environment.yml and trying to rerun step 3 above. 
 
 #### Examples
 
