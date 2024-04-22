@@ -7,7 +7,7 @@ This repository hosts the main part of the code that led to the results in our p
 BibTex: 
 ```
 @article{
-doi:10.1126/sciadv.adh4439,
+aiyappa2024emergence,
 author = {Rachith Aiyappa  and Alessandro Flammini  and Yong-Yeol Ahn },
 title = {Emergence of simple and complex contagion dynamics from weighted belief networks},
 journal = {Science Advances},
@@ -17,8 +17,8 @@ pages = {eadh4439},
 year = {2024},
 doi = {10.1126/sciadv.adh4439},
 URL = {https://www.science.org/doi/abs/10.1126/sciadv.adh4439},
-eprint = {https://www.science.org/doi/pdf/10.1126/sciadv.adh4439},
-abstract = {Social contagion is a ubiquitous and fundamental process that drives individual and social changes. Although social contagion arises as a result of cognitive processes and biases, the integration of cognitive mechanisms with the theory of social contagion remains an open challenge. In particular, studies on social phenomena usually assume contagion dynamics to be either simple or complex, rather than allowing it to emerge from cognitive mechanisms, despite empirical evidence indicating that a social system can exhibit a spectrum of contagion dynamics—from simple to complex—simultaneously. Here, we propose a model of interacting beliefs, from which both simple and complex contagion dynamics can organically arise. Our model also elucidates how a fundamental mechanism of complex contagion—resistance—can come about from cognitive mechanisms. Different classes of social contagion dynamics emerge from a model grounded in fundamental cognitive processes and biases.}}
+eprint = {https://www.science.org/doi/pdf/10.1126/sciadv.adh4439}
+}
 ```
 ## Code to generate figures of the paper
 
