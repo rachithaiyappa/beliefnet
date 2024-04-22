@@ -8,7 +8,7 @@ BibTex:
 ```
 @article{
 aiyappa2024emergence,
-author = {Rachith Aiyappa  and Alessandro Flammini  and Yong-Yeol Ahn },
+author = {Rachith Aiyappa and Alessandro Flammini and Yong-Yeol Ahn},
 title = {Emergence of simple and complex contagion dynamics from weighted belief networks},
 journal = {Science Advances},
 volume = {10},
